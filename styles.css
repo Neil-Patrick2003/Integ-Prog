@@ -1,4 +1,4 @@
-/* Reset */
+
 * {
   margin: 0;
   padding: 0;
@@ -120,4 +120,6 @@ button:active {
 .register-link a {
   color: #ffffff;
   text-decoration: underline;
+
+
 }
