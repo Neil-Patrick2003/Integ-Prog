@@ -1,7 +1,17 @@
+/* Reset */
+
+body {
+  height: 100vh;
+  background-color: #1e1e2f; /* Dark blue-gray tone */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInBody 1.2s ease-in;
+}
 
 * {
   margin: 0;
-  padding: 0;
+  padding: 0; rgba(155, 255, 255, 0.1);
   box-sizing: border-box;
   font-family: 'Segoe UI', sans-serif;
 }
@@ -120,6 +130,4 @@ button:active {
 .register-link a {
   color: #ffffff;
   text-decoration: underline;
-
-
 }
