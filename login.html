@@ -1,0 +1,88 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Login</title>
+    <!-- Link to Water.css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2.0.0/dist/dark.min.css">
+    <style>
+        /* Center the form */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #ffffff;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+                <div class="error" id="usernameError"></div>
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <div class="error" id="passwordError"></div>
+            </div>
+            <div>
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Get elements for form and error display
+        const loginForm = document.getElementById('loginForm');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const usernameError = document.getElementById('usernameError');
+        const passwordError = document.getElementById('passwordError');
+
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent form submission
+
+            let valid = true;
+
+            // Clear previous errors
+            usernameError.textContent = '';
+            passwordError.textContent = '';
+
+            // Username validation
+            if (usernameInput.value.trim() === '') {
+                valid = false;
+                usernameError.textContent = 'Username is required.';
+            }
+
+            // Password validation
+            if (passwordInput.value.trim() === '') {
+                valid = false;
+                passwordError.textContent = 'Password is required.';
+            }
+
+            // If valid, print a success message
+            if (valid) {
+                alert('Login successful!');
+                // You can replace this with actual login logic like API calls
+            }
+        });
+    </script>
+</body>
+</html>
